@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Users {% endblock %}
+{% block content %}
+<form method="POST">
+    <div id="user-container">
+        <div id="user-image"><img src={{user.image_url}} alt="Image of {{user.first_name}} {{user.last_name}}"></div>
+        <div id="user-name"><h1>{{user.first_name}} {{user.last_name}}</h1></div>
+        <input type="submit" name="action" value="edit" />
+        <input type="submit" name="action" value="delete" />
+        <input type="submit" name="action" value="home" />
+    </div>
+
+</form>
+{% endblock %}
+
