@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Add User {% endblock %}
+{% block content %}
+<div class="container">
+    <form method="POST">
+        <h1>Add Post for {{user.first_name}} {{user.last_name}}</h1>
+        <div class="form-group">
+            <label for="post-title">Title</label>
+            <input type="text" name="post-title" id="post-title">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Post</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="post-content" rows="3"></textarea>
+          </div>
+        <button>Add Post</button>
+    </form>
+</div>
+{% endblock %}
