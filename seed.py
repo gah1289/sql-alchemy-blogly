@@ -1,4 +1,4 @@
-from models import User, db, Post
+from models import User, db, Post, Tag, PostTag
 
 
 def add_seed_data():
@@ -15,6 +15,10 @@ def add_seed_data():
     post2=Post(
         user_id=1, post_title="test-2", post_content= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     )
+
+    tag1=Tag(name="Funny")
+    tag2=Tag(name="Science")
+
     db.session.add(myspace_tom);
     db.session.add(beyonce);
     db.session.add(reid);
@@ -22,4 +26,7 @@ def add_seed_data():
     db.session.commit();
     db.session.add(post1);
     db.session.add(post2);
+    db.session.commit();
+    db.session.add(tag1);
+    db.session.add(tag2);
     db.session.commit();

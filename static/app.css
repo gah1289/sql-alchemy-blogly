@@ -14,3 +14,13 @@ li {
 #old-post {
 	color: #b2beb5;
 }
+
+.badge-primary {
+	background-color: #007bff;
+	text-decoration: none;
+}
+
+.badge-primary:hover {
+	background-color: #0562c5;
+	color: #fff;
+}

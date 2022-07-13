@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Users {% endblock %}
+{% block content %}
+<h1>Blogly Exercise</h1>
+<div class="container">
+    <div class="row align-items-start">
+    <form action="/add-user" class="col">
+        <h2>Users</h2>
+        {% for user in users %}
+        <li><a href="/details/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li>
+        {% endfor %}
+        <button id="show-user-form">Add User</button>
+    </form>
+    <form action="/add-tag" class="col">
+        <h2>Tags</h2>
+        {% for tag in tags %}
+        <li><a href="/show-tag/{{tag.id}}">{{tag.name}}</a></li>
+        {% endfor %}
+        <button id="show-user-form">Add Tag</button>
+    </form>
+    </div>
+  </div>
+
+{% endblock %}
+

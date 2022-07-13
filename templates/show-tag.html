@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Users {% endblock %}
+{% block content %}
+<h1>{{tag.name}}</h1>
+<ul>
+    {% for post in tag.posts %}
+    <li>
+        <a href="/view-post/{{post.user_id}}-{{post.id}}">{{post.post_title}}</a> by <a href="/details/{{post.user_id}}">{{post.user.first_name}} {{post.user.last_name}}</a>
+    </li>
+    {% endfor %} 
+</ul>
+<a href="/edit-tag/{{tag.id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+<a href="/delete-tag/{{tag.id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</a>
+<a href="/" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Home</a>
+
+{% endblock %}

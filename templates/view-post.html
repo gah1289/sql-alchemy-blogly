@@ -6,6 +6,15 @@
     <div class="card-body">
       <h5 class="card-title">{{post.post_title}}</h5>
       <p class="card-text">{{post.post_content}}</p>
+      {% if post.tags %}
+      <div class="container">
+            <p>Tags:
+            {% for tag in post.tags %}
+            <a href="/show-tag/{{tag.id}}" class="badge badge-primary">{{tag.name}}</a>
+            {% endfor %}
+          </p>       
+      </div>
+      {% endif %}
     <input class="btn btn-outline-secondary" type="submit" name="post-action" value="Cancel"/>
     <input class="btn btn-primary" type="submit" name="post-action" value="Edit"/>
     <input class="btn btn-danger" type="submit" name="post-action" value="Delete"/>
